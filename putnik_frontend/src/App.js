@@ -61,7 +61,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch(`Maps/${selectedMap}.txt`)
+    fetch(`maps/${selectedMap}.txt`)
       .then((response) => response.text())
       .then((text) => {
         setMapContent(text);
@@ -74,6 +74,7 @@ function App() {
       });
   }, [selectedMap]);
 
+  ///Enter dogadjaj
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Enter") {
@@ -146,7 +147,8 @@ function App() {
       console.error("Došlo je do greške:", error);
     }
   };
-
+  
+  /// razmak dogadjaj
   useEffect(() => {
     const handleKeyDown = (event) => {
       event.preventDefault();
@@ -168,6 +170,8 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPaused, dataAgent]);
 
+
+  ///S događaj
   useEffect(() => {
     const handleKeyDown = (event) => {
       event.preventDefault();
@@ -290,11 +294,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="naziv">Pytnik</h1>
+      <h1 className="naziv">PUTNIK IGRA</h1>
       <div className="agents">
-        <p className="izaberiAgenta">
-          Izaberite agenta za sakupljajnje zlatnika:
-        </p>
+        <h1 className="izaberiAgenta">
+          AGENTI:
+        </h1>
         <div
           className={selectedAgent === "0" ? "selected-agent" : "agent"}
           onClick={() => changeAgent("0", "Aki.png")}
@@ -324,12 +328,18 @@ function App() {
           <h3>Micko</h3>
         </div>
         <div className="mapSelection">
+        <label htmlFor="mapSelection" ><b> MAPE: </b></label>
           <select onChange={handleMapChange}>
-            <option value="map1">mapa1</option>
-            <option value="map2">mapa2</option>
-            <option value="map3">mapa3</option>
+            <option value="map1">prva</option>
+            <option value="map2">druga</option>
+            <option value="map3">treca</option>
           </select>
         </div>
+      </div>
+      <div className="dugme">
+        <button ref={buttonRef} onClick={handleSubmit}>
+          ODABERI AGENTA I MAPU I PUSTI IGRU
+        </button>
       </div>
       <div className="mapa">
         <div className="terrain">
@@ -377,7 +387,7 @@ function App() {
           {isGameOver && <p className="pauza">GAME OVER</p>}
         </div>
         <div className="data">
-          <h2>=====STEPS=====</h2>
+          <h2>=====Steps=====</h2>
           <div className="opisiPutanja">
             {uniq(opisi).map((opis, index) => (
               <div className="opis" key={index}>
@@ -395,11 +405,6 @@ function App() {
             </h2>
           </div>
         </div>
-      </div>
-      <div className="dugme">
-        <button ref={buttonRef} onClick={handleSubmit}>
-          Kreni
-        </button>
       </div>
     </div>
   );

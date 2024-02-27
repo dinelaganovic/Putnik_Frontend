@@ -3,10 +3,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: green;
 }
+
+@font-face {
+  font-family: 'GameFont';
+  src: local('GameFont'), url('./fonts/game_font.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CoinFont';
+  src: local('CoinFont'), url('./fonts/coin_font.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'InfoFont';
+  src: local('InfoFont'), url('./fonts/info_font.ttf') format('truetype');
+}
+
 .naziv{
+  font-family: 'GameFont';
   font-size: 50px;
-  color: rgb(60, 213, 213);
+  color: rgb(78, 151, 241);
 }
 .agents {
   display: flex;
@@ -20,19 +36,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 22px;
+  font-family: 'GameFont';
+  color: rgb(78, 151, 241);
 }
 .agent {
   width: 100px;
   height: 100px;
-  border: 3px solid red;
+  border: 3px solid rgb(7, 245, 7);
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 .agent h3{
   margin-top: 5px;
+  font-family: 'GameFont';
 }
 .agent img {
   width: 100%;
@@ -40,14 +59,15 @@
   border-radius: 8px;
 }
 .selected-agent {
-  background-color: grey;
+  background-color: rgb(78, 151, 241);
   width: 100px;
   height: 100px;
-  border: 4px solid rgb(7, 245, 7);
+  border: 4px solid rgb(255, 255, 255);
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 50px;
+  font-family: 'GameFont';
   animation-play-state: paused;
 }
 .selected-agent h3{
@@ -59,14 +79,18 @@
   border-radius: 4px;
 }
 .mapSelection {
+  color: rgb(78, 151, 241);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-family: 'GameFont';
 }
 .mapSelection select{
-  background-color: aqua;
+  background-color:  rgb(78, 151, 241);
+  font-family: 'GameFont';
   width: 120%;
+  color: rgb(0, 0, 0);
   height: 30px;
 }
 .mapa {
@@ -88,7 +112,7 @@
   border: 2px solid black;
   background-color: black;
   color: lightgreen;
-  font-family: cursive;
+  font-family: 'InfoFont';
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -116,13 +140,17 @@
 .dugme {
   display: flex;
   flex-direction: column;
+  font-family: 'GameFont';
   justify-content: center;
 }
 .dugme button {
-  width: 120px;
+  width: 1200px;
   height: 50px;
-  background-color: red;
+  background-color:rgb(78, 151, 241);
   color: white;
+  font-family: 'GameFont';
+  font-size: 30px;
+  margin-bottom: 10px;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -135,6 +163,7 @@
   border: 3px solid black;
   text-align: center;
   font-weight: bold;
+  font-family: 'CoinFont';
   font-size: 20px;
   display: flex;
   justify-content: center;
@@ -145,15 +174,18 @@
 }
 .goldCoin p {
   position: absolute;
+  font-family: 'CoinFont';
 }
 .koraci {
   position: absolute;
   color: white;
   font-size: 25px;
+  font-family: 'InfoFont';
 }
 .pauza {
   color: red;
   font-size: 30px;
+  font-family: 'GameFont';
   position: absolute;
   top: 45%;
   font-weight: bold;
